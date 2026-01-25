@@ -80,4 +80,37 @@ MIT License. See `LICENSE`.
 ---
 
 ## Author
-Portfolio Technical Artist Tooling Project
+Matsubayashi Ayaka
+
+---
+
+## Technical Architecture
+### Goals
+- Prevent FBX export problems before engine import
+- Reduce iteration time for artists
+- Provide Blender-native UX (non-modal, non-destructive)
+
+### Implementation Details
+- Blender Python API
+- bmesh topology analysis
+- Hybrid Face Orientation detection:
+  - Closed mesh → centroid based absolute test
+  - Open mesh → neighbor consistency / winding test
+- VIEW_3D context-safe operator overrides
+- No background handlers (manual rescan only for performance)
+- Node Wrangler compatibility workaround (Blender 4.2)
+
+### Design Decisions
+- No auto-fix (artists stay in control)
+- Select & Focus workflow only
+- Sidebar panel instead of modal windows
+- Minimal UI for production speed
+
+### Why this matters
+In real projects, fixing issues **inside Blender before export** saves significant time compared to debugging after importing into a game engine.
+
+This tool demonstrates:
+- Pipeline thinking
+- Tool design for artists
+- Practical geometry analysis
+- Stable Blender add-on architecture
