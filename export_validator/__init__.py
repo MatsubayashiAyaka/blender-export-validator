@@ -5,14 +5,14 @@ Export Validator - Blender Addon
 A validation tool for checking mesh objects before exporting (FBX).
 Detects common issues that can cause problems in game engines.
 
-Author: Export Validator
+Author: Matsubayashi Ayaka
 Version: 1.0.0
 Blender: 3.6+
 """
 
 bl_info = {
     "name": "Export Validator",
-    "author": "Export Validator Team",
+    "author": "Matsubayashi Ayaka",
     "version": (1, 0, 0),
     "blender": (3, 6, 0),
     "location": "View3D > Sidebar > Tool > Export Validator",
